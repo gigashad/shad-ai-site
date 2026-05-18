@@ -1,6 +1,11 @@
 ---
 import { EMAIL, SUBSTACK, TELEGRAM, X } from "../consts";
 import ThemeToggle from "./ThemeToggle.astro";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const baseNoSlash = base.replace(/\/$/, "");
 ---
 
 <header
@@ -8,14 +13,14 @@ import ThemeToggle from "./ThemeToggle.astro";
   transition:name="header"
 >
   <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 text-sm">
-    <a href="/" class="font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">
+    <a href={base} class="font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">
       Shad.ai
     </a>
     <div class="hidden items-center gap-5 md:flex">
-      <a href="/#work">work</a>
-      <a href="/#proof">proof</a>
-      <a href="/#offers">cost</a>
-      <a href="/#receipts">receipts</a>
+      <a href={`${baseNoSlash}#work`}>work</a>
+      <a href={`${baseNoSlash}#proof`}>proof</a>
+      <a href={`${baseNoSlash}#offers`}>cost</a>
+      <a href={`${baseNoSlash}#receipts`}>receipts</a>
       <a href={SUBSTACK} target="_blank">Substack</a>
       <a href={TELEGRAM} target="_blank">Telegram</a>
       <a href={X} target="_blank">X</a>

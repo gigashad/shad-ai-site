@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_BASE_PATH: /shad-ai-site
     steps:
       - name: Checkout
         uses: actions/checkout@v4
