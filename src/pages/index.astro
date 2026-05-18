@@ -1,0 +1,211 @@
+---
+import {
+  EMAIL,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+  SUBSTACK,
+  TELEGRAM,
+  X,
+} from "../consts";
+import Layout from "../layouts/Layout.astro";
+
+const mailto = `mailto:${EMAIL}?subject=Working%20with%20Shad`;
+
+const work = [
+  {
+    title: "Company change from the inside",
+    body: "I sit close to founders, teams, and customers, then turn vague strategic anxiety into decisions, operating loops, launches, and internal momentum.",
+  },
+  {
+    title: "AI and operator systems",
+    body: "Not AI theatre. Actual workflows, agent harnesses, automations, research systems, and delivery machinery that change how a company works week to week.",
+  },
+  {
+    title: "Founder-led distribution",
+    body: "Narrative, launches, X, community, Telegram, content, proof, and market education. The point is not posting more. The point is making the market understand faster.",
+  },
+  {
+    title: "Messy market strategy",
+    body: "Crypto, collectibles, marketplaces, trust gaps, liquidity problems, weird internet-native consumer behavior, and markets that do not fit clean consulting slides.",
+  },
+];
+
+const current = [
+  ["Giga", "Advisor website and partnership surface. Helping package how serious companies use AI, operators, and public distribution without turning it into agency slop."],
+  ["Zip Code", "Upcoming work around place, locality, community, and the new operating layer between online coordination and real-world demand."],
+  ["Tower.com", "Upcoming work around a premium internet property with old-domain gravity, AI-era positioning, and the possibility of becoming more than another landing page."],
+  ["Altworth", "Building in public around collectibles, trust, pricing, liquidity, and the strange fact that huge real-world markets still run on vibes, dealers, Discords, and screenshots."],
+];
+
+const proof = [
+  "Almost a decade around crypto, growth, launches, communities, and internet-native products.",
+  "Advisor/operator work across founder strategy, brand, comms, AI workflows, GTM, and product direction.",
+  "Built internal systems for research, task orchestration, content, client delivery, and executive visibility.",
+  "Collected media, speeches, predictions, and public writing over time. The receipts section is built to become the archive.",
+];
+
+const offers = [
+  {
+    name: "Advisory call",
+    price: "from £500",
+    body: "A focused strategy session for founders, teams, launches, narratives, AI workflows, or one hard business knot that needs an outside operator brain.",
+  },
+  {
+    name: "Monthly advisor",
+    price: "from £3k/mo",
+    body: "Light but serious ongoing access. Best for founders who need recurring judgement, positioning, launch help, operator systems, and uncomfortable clarity.",
+  },
+  {
+    name: "Embedded sprint",
+    price: "from £10k",
+    body: "A short, intense build/change sprint: diagnose the system, create the assets, rewire the workflow, ship the launch, or turn strategy into operating reality.",
+  },
+];
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION} className="max-w-6xl px-4 pb-20">
+  <main class="space-y-24">
+    <section class="grid gap-10 pt-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+      <div class="space-y-8">
+        <div class="inline-flex rounded-full bg-zinc-100 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+          advisor · operator · change agent
+        </div>
+        <div class="space-y-5">
+          <h1 class="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.07em] text-zinc-950 dark:text-white md:text-7xl">
+            I help companies make the market understand faster.
+          </h1>
+          <p class="max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300 md:text-xl">
+            Shad.ai is my front door for advisory work with founders and teams. Strategy, AI workflows, founder-led distribution, operating systems, launches, and the awkward middle where a company knows something has to change but has not made it real yet.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href={mailto} class="rounded-md bg-zinc-950 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200">
+            book / enquire
+          </a>
+          <a href="#offers" class="rounded-md bg-white px-5 py-3 text-sm font-medium text-zinc-950 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] hover:bg-zinc-50 dark:bg-zinc-900 dark:text-white dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+            see cost to work with me
+          </a>
+        </div>
+      </div>
+
+      <aside class="rounded-xl bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_2px_2px_rgba(0,0,0,0.04),0_12px_24px_-18px_rgba(0,0,0,0.25)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">current thesis</p>
+        <p class="mt-4 text-2xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white">
+          Most companies do not need more decks. They need sharper taste, faster feedback, better operating loops, and someone willing to turn the uncomfortable truth into motion.
+        </p>
+        <div class="mt-6 grid grid-cols-2 gap-3 text-sm text-zinc-600 dark:text-zinc-300">
+          <span class="rounded-lg bg-zinc-50 p-3 dark:bg-zinc-800">AI systems</span>
+          <span class="rounded-lg bg-zinc-50 p-3 dark:bg-zinc-800">GTM</span>
+          <span class="rounded-lg bg-zinc-50 p-3 dark:bg-zinc-800">founder voice</span>
+          <span class="rounded-lg bg-zinc-50 p-3 dark:bg-zinc-800">market maps</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="work" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">what I do inside companies</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.06em] text-zinc-950 dark:text-white">I work where strategy has to become behavior.</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {work.map((item) => (
+          <article class="rounded-xl bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_2px_2px_rgba(0,0,0,0.04)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+            <h3 class="text-2xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white">{item.title}</h3>
+            <p class="mt-3 leading-7 text-zinc-600 dark:text-zinc-300">{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">now / next</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.06em] text-zinc-950 dark:text-white">Current work and upcoming bets.</h2>
+      </div>
+      <div class="divide-y divide-zinc-200 rounded-xl bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:divide-zinc-800 dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+        {current.map(([name, body]) => (
+          <div class="grid gap-3 p-6 md:grid-cols-[180px_1fr]">
+            <h3 class="text-xl font-semibold tracking-[-0.03em] text-zinc-950 dark:text-white">{name}</h3>
+            <p class="leading-7 text-zinc-600 dark:text-zinc-300">{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="proof" class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div class="space-y-3">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">proof over polish</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.06em] text-zinc-950 dark:text-white">Past engagements, media, speeches, and receipts belong here.</h2>
+        <p class="leading-7 text-zinc-600 dark:text-zinc-300">
+          The first version is deliberately simple. The important thing is the structure: every past engagement, media hit, speech, prediction, and viral post gets a clean slot instead of being lost across X, Telegram, Substack, and old folders.
+        </p>
+      </div>
+      <div class="grid gap-3">
+        {proof.map((item) => (
+          <div class="rounded-xl bg-white p-5 text-zinc-700 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:bg-zinc-900 dark:text-zinc-300 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+            {item}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="receipts" class="grid gap-4 md:grid-cols-3">
+      <article class="rounded-xl bg-zinc-950 p-6 text-white dark:bg-white dark:text-zinc-950">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] opacity-60">hit tweets</p>
+        <h3 class="mt-4 text-2xl font-semibold tracking-[-0.04em]">The public archive.</h3>
+        <p class="mt-3 leading-7 opacity-80">Add top X posts, screenshots, links, and the idea behind each one. Useful for social proof and for showing how I think in public.</p>
+      </article>
+      <article class="rounded-xl bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">predictions</p>
+        <h3 class="mt-4 text-2xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white">What I saw early.</h3>
+        <p class="mt-3 leading-7 text-zinc-600 dark:text-zinc-300">Crypto cycles, AI, communities, markets, collectibles, distribution. Receipts should be timestamped, linked, and brutally edited.</p>
+      </article>
+      <article class="rounded-xl bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">media / talks</p>
+        <h3 class="mt-4 text-2xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white">Collected appearances.</h3>
+        <p class="mt-3 leading-7 text-zinc-600 dark:text-zinc-300">Podcasts, speeches, panels, media, old decks, and public writing. This becomes the trust layer for people coming from the X bio.</p>
+      </article>
+    </section>
+
+    <section id="offers" class="space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <p class="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">cost to work with me</p>
+        <h2 class="text-4xl font-semibold tracking-[-0.06em] text-zinc-950 dark:text-white">Simple paths in. Exact scope after the first conversation.</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        {offers.map((offer) => (
+          <article class="rounded-xl bg-white p-6 shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_2px_2px_rgba(0,0,0,0.04)] dark:bg-zinc-900 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+            <h3 class="text-2xl font-semibold tracking-[-0.04em] text-zinc-950 dark:text-white">{offer.name}</h3>
+            <p class="mt-2 font-mono text-sm text-zinc-500">{offer.price}</p>
+            <p class="mt-4 leading-7 text-zinc-600 dark:text-zinc-300">{offer.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="rounded-2xl bg-zinc-950 p-8 text-white md:p-10 dark:bg-white dark:text-zinc-950">
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.18em] opacity-60">front door</p>
+          <h2 class="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.06em]">If you want me in the room, start with the problem.</h2>
+          <p class="mt-4 max-w-2xl leading-7 opacity-80">
+            Send the company, the moment, what is stuck, and what happens if nothing changes. I will tell you if it is a fit.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <a href={mailto} class="rounded-md bg-white px-5 py-3 text-center text-sm font-medium text-zinc-950 hover:bg-zinc-200 dark:bg-zinc-950 dark:text-white dark:hover:bg-zinc-800">email {EMAIL}</a>
+          <a href={X} target="_blank" class="rounded-md px-5 py-3 text-center text-sm font-medium shadow-[0_0_0_1px_rgba(255,255,255,0.2)] hover:bg-white/10 dark:shadow-[0_0_0_1px_rgba(0,0,0,0.14)] dark:hover:bg-zinc-100">follow on X</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="flex flex-wrap items-center justify-between gap-4 border-t border-zinc-200 pt-8 text-sm text-zinc-500 dark:border-zinc-800">
+      <p>Shad.ai · in partnership with Giga</p>
+      <div class="flex gap-4">
+        <a href={SUBSTACK} target="_blank" class="hover:text-zinc-950 hover:underline dark:hover:text-white">Substack</a>
+        <a href={TELEGRAM} target="_blank" class="hover:text-zinc-950 hover:underline dark:hover:text-white">Telegram</a>
+        <a href={X} target="_blank" class="hover:text-zinc-950 hover:underline dark:hover:text-white">X</a>
+      </div>
+    </footer>
+  </main>
+</Layout>
